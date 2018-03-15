@@ -1,0 +1,108 @@
+:root {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+}
+
+.menus ,
+.menus li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.menus li  {
+    position: relative;
+    margin-right: 2px;
+}
+
+.menus {
+    text-align: center;
+}
+
+.menus > li {
+    display: inline-block;
+}
+
+.new > li {
+    display: inline-block;
+}
+
+.menus li a {
+    text-decoration: none;
+    padding: 30px;
+    text-transform: uppercase;
+    font-size: .9rem;
+    display: block;
+    background-color: #333;
+    color: #fff;
+}
+.menus > li > ul > li:hover .submenus{
+    visibility: visible;
+    opacity: 1;
+}
+.submenus {
+    position: absolute;
+    top: 0%;
+    left: 100%;
+    min-width: 150px;
+    height: 100%;
+    padding: 0;
+    text-align: left;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .4s ease;
+}
+
+.menus.landscape .new ul {
+    padding: 0;
+}
+.menus.landscape .new ul li {
+    display: inline-block;
+    width: 100%;
+}
+.menus.landscape .new > ul {
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s ease;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 220px;
+    text-align: left;
+}
+.menus.landscape .icons {
+    height: 50px;
+    width: 100px;
+}
+.menus.landscape .icons:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
+.menus.landscape .new:hover > ul {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menus.potrait,
+.menus.potrait .new ul {
+    display: flex;
+}
+.menus.potrait .new ul {
+    padding-left: 0;
+}
